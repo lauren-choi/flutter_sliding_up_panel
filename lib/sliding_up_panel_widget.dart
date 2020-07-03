@@ -238,37 +238,37 @@ class _SlidingUpPanelWidgetState extends State<SlidingUpPanelWidget>
   }
 
   ///Handle method when user release drag.
-  void _handleDragEnd(DragEndDetails details) {
-    if (details.velocity.pixelsPerSecond.dy < -_kMinFlingVelocity) {
-      if (SlidingUpPanelStatus.collapsed == widget.panelController.status) {
-        anchor();
-      } else if ((SlidingUpPanelStatus.anchored ==
-          widget.panelController.status)) {
-        expand();
-      } else {
-        expand();
-      }
-    } else if (details.velocity.pixelsPerSecond.dy > _kMinFlingVelocity) {
-      if (SlidingUpPanelStatus.expanded == widget.panelController.status) {
-        anchor();
-      } else if ((SlidingUpPanelStatus.anchored ==
-          widget.panelController.status)) {
-        collapse();
-      } else {
-        collapse();
-      }
-    } else if (_animationController.value < _kCloseProgressThreshold) {
-      collapse();
-    } else if ((_animationController.value >=
-        (anchorFraction + upperBound) / 2)) {
-      expand();
-    } else if (_animationController.value >= _kCloseProgressThreshold &&
-        _animationController.value < (anchorFraction + upperBound) / 2) {
-      anchor();
-    } else {
-      collapse();
-    }
-  }
+  // void _handleDragEnd(DragEndDetails details) {
+  //   if (details.velocity.pixelsPerSecond.dy < -_kMinFlingVelocity) {
+  //     if (SlidingUpPanelStatus.collapsed == widget.panelController.status) {
+  //       anchor();
+  //     } else if ((SlidingUpPanelStatus.anchored ==
+  //         widget.panelController.status)) {
+  //       expand();
+  //     } else {
+  //       expand();
+  //     }
+  //   } else if (details.velocity.pixelsPerSecond.dy > _kMinFlingVelocity) {
+  //     if (SlidingUpPanelStatus.expanded == widget.panelController.status) {
+  //       anchor();
+  //     } else if ((SlidingUpPanelStatus.anchored ==
+  //         widget.panelController.status)) {
+  //       collapse();
+  //     } else {
+  //       collapse();
+  //     }
+  //   } else if (_animationController.value < _kCloseProgressThreshold) {
+  //     collapse();
+  //   } else if ((_animationController.value >=
+  //       (anchorFraction + upperBound) / 2)) {
+  //     expand();
+  //   } else if (_animationController.value >= _kCloseProgressThreshold &&
+  //       _animationController.value < (anchorFraction + upperBound) / 2) {
+  //     anchor();
+  //   } else {
+  //     collapse();
+  //   }
+  // }
 
   ///Collapse the panel
   void collapse() {
