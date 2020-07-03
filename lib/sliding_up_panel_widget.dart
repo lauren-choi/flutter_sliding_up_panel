@@ -280,7 +280,7 @@ class _SlidingUpPanelWidgetState extends State<SlidingUpPanelWidget>
 
   ///Expand the panel
   void expand() {
-    _animationController?.animateTo(0.5,
+    _animationController?.animateTo(1.0,
         curve: Curves.linearToEaseOut, duration: _kSlidingUpPanelDuration);
     widget.panelController.value = SlidingUpPanelStatus.expanded;
     widget.onStatusChanged?.call(widget.panelController.status);
